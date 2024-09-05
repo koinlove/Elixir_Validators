@@ -1,5 +1,6 @@
-엘릭서 노드 프로그램을 깔아보아요~
+## 엘릭서 노드 프로그램을 깔아보아요~
 
+## 노드 설치 명령어
 ```bash
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
@@ -8,20 +9,24 @@
 
 가이드 사진이 필요하신가요..? 멍청한 본인 지능을 탓하시길 ㅎㅎ..
 
+## 기타 명령어
+1. 노드 잘 굴러가는지 확인하는 명령어
 ```bash
 curl localhost:17690/metrics
 ```
-를 입력하시면 아마 이런 게 뜰 거에요
+를 입력하시면 아마 이런 게 뜰 거에요 (아래는 명령어 아님요 ㅎㅎ)
 ```bash
 {"started_at":"2024-09-03 05:41:39","data_frame_version":"1.0.1","order_proposal_version":"1.0.1","app_version":"3.1.1","status":"authorized","data_frames_consumed":67,"proposals_produced":66}
 ```
-간혹 Status에 : active reserve가 뜨기도 하는데 뭐 워킹만 되면 상관없어용.
+간혹 Status에 : active reserve가 뜨기도 하는데 뭐 돌아가기만 하면 상관없어용.
 
+2. 노드의 로그 확인하는 명령어
 ```bash
 docker logs elixir -f -n 100
 ```
 아니면 이거로 로그 보셔두 되구염...
 
+3. 노드에 저장된 지갑 주소 확인 명령어
 ```bash
 cat validator_wallet.txt
 ```
@@ -30,7 +35,6 @@ cat validator_wallet.txt
 ```bash
 cat validator.env
 ```
-이거 해도 보이실 거. 
+이거 해도 보이실 거. (프라이빗 키랑 지갑이랑 기타 등등 보이실 거임.)
 
 오류 뜨면 뵨죽이나 라나돼레이에게 톡하세욤. 그럼 20000
-1``
