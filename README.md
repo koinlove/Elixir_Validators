@@ -10,7 +10,7 @@
 가이드 사진이 필요하신가요..? 멍청한 본인 지능을 탓하시길 ㅎㅎ..
 
 ## 기타 명령어
-1. 노드 잘 굴러가는지 확인하는 명령어
+- 노드 잘 굴러가는지 확인하는 명령어
 ```bash
 curl localhost:17690/metrics
 ```
@@ -20,13 +20,13 @@ curl localhost:17690/metrics
 ```
 간혹 Status에 : active reserve가 뜨기도 하는데 뭐 돌아가기만 하면 상관없어용.
 
-2. 노드의 로그 확인하는 명령어
+- 노드의 로그 확인하는 명령어
 ```bash
 docker logs elixir -f -n 100
 ```
 아니면 이거로 로그 보셔두 되구염...
 
-3. 노드에 저장된 지갑 주소 확인 명령어
+- 노드에 저장된 지갑 주소 확인 명령어
 ```bash
 cat validator_wallet.txt
 ```
