@@ -118,8 +118,8 @@ echo ""
 echo -e "${BOLD}${YELLOW}1.방문하세요: https://testnet-3.elixir.xyz/ (CTRL 누른 상태에서 마우스 클릭하면 들어가짐).${NC}"
 echo -e "${BOLD}${YELLOW}2.위 사이트에서 세폴리아 이더가 있는 지갑으로 로그인하세요(방금 생성한 지갑 입력하라는 거 아님.).${NC}"
 echo -e "${BOLD}${YELLOW}2-1.만약 지갑에 이더가 없으면 톡방에 세폴리아 이더 어디서 받냐고 물어보셈.${NC}"
-echo -e "${BOLD}${YELLOW}3.엘릭서 토큰 mint하삼${NC}"
-echo -e "${BOLD}${YELLOW}4.엘릭서 Mock 토큰 민트 완료했으면 그걸로 Stake 하삼(참고로 두 번 눌러야 함.).${NC}"
+echo -e "${BOLD}${YELLOW}3.'MINT 1,000 MOCK' 클릭해서 토큰 받기.${NC}"
+echo -e "${BOLD}${YELLOW}4.토큰 민트 완료했으면 바로 밑에 있는 Stake 칸에 MAX 누른 다음에 approve 누르고 한 번 더 클릭하기.${NC}"
 echo -e "${BOLD}${YELLOW}5.밑에 custom validator라는 버튼 클릭,그리고 방금 받은 Validator address 입력하삼. 님의 validator 지갑 address : $VALIDATOR_ADDRESS for delegation${NC}"
 echo ""
 
@@ -133,8 +133,8 @@ else
 	echo -e "${BOLD}${YELLOW}1.방문하세요: https://testnet-3.elixir.xyz/ (CTRL 누른 상태에서 마우스 클릭하면 들어가짐).${NC}"
 	echo -e "${BOLD}${YELLOW}2.사이트 들어가서 세폴리아 이더가 있는 지갑으로 CONNECT하세요(방금 생성한 지갑 입력하라는 거 아님.).${NC}"
     echo -e "${BOLD}${YELLOW}2-1.만약 지갑에 이더가 없으면 톡방에 세폴리아 이더 어디서 받냐고 물어보셈.${NC}"
-    echo -e "${BOLD}${YELLOW}3.엘릭서 토큰 mint하삼${NC}"
-	echo -e "${BOLD}${YELLOW}4.엘릭서 Mock 토큰 민트 완료했으면 그걸로 Stake 하삼(참고로 두 번 눌러야 함.).${NC}"
+    echo -e "${BOLD}${YELLOW}3.'MINT 1,000 MOCK' 클릭해서 토큰 받기.${NC}"
+	echo -e "${BOLD}${YELLOW}4.토큰 민트 완료했으면 바로 밑에 있는 Stake 칸에 MAX 누른 다음에 approve 누르고 한 번 더 클릭하기.${NC}"
 	echo -e "${BOLD}${YELLOW}5.밑에 custom validator라는 버튼 클릭,그리고 방금 받은 Validator address 입력하삼. 님의 validator 지갑 address : $VALIDATOR_ADDRESS for delegation${NC}"
 	read -p "이번엔 진짜 완료하셨나욤? (y/n): " daedap
 	if [[ "$daedap" =~ ^[yY]$ ]]; then
