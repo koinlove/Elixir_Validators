@@ -1,0 +1,36 @@
+엘릭서 노드 프로그램을 깔아보아요~
+
+```bash
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
+```
+
+위에 올리면 바로 후루룩 하면서 알아서 깔린답니다.
+
+가이드 사진이 필요하신가요..? 멍청한 본인 지능을 탓하시길 ㅎㅎ..
+
+```bash
+curl localhost:17690/metrics
+```
+를 입력하시면 아마 이런 게 뜰 거에요
+```bash
+{"started_at":"2024-09-03 05:41:39","data_frame_version":"1.0.1","order_proposal_version":"1.0.1","app_version":"3.1.1","status":"authorized","data_frames_consumed":67,"proposals_produced":66}
+```
+간혹 Status에 : active reserve가 뜨기도 하는데 뭐 워킹만 되면 상관없어용.
+
+```bash
+docker logs elixir -f -n 100
+```
+아니면 이거로 로그 보셔두 되구염...
+
+```bash
+cat validator_wallet.txt
+```
+이거 입력하면 님 지갑주소랑 그런 거 보여용
+
+```bash
+cat validator.env
+```
+이거 해도 보이실 거. 
+
+오류 뜨면 뵨죽이나 라나돼레이에게 톡하세욤. 그럼 20000
+1``
