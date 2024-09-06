@@ -54,3 +54,22 @@ cat validator.env
 https://dxzenith.github.io/Elixir-Validator-Node/
 ```
 여기 들어가서 내가 설정한 닉네임 검색하면 됩니다.
+
+## 나 뭔가 실수했어요, 내 가상서버(VPS)에서 Elixir_Validator Node를 삭제하고 싶어요.
+```bash
+docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop && docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm && docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'` && sudo apt-get remove node.js && sudo apt-get remove npm && sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules && sudo rm -rf /usr/local/lib/node* && sudo rm -rf /usr/local/include/node* && sudo rm -rf /usr/local/bin/node*
+```
+
+(한 줄입니다) 입력한 후에
+
+```bash
+rm validator_wallet.txt && rm validator.env && rm generate_wallet.js
+```
+
+입력해서 깔끔하게 지워주기
+
+## 다시 재설치 하려면 
+```bash
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
+```
+넣으시면 됩니다~ ㅎㅎ
