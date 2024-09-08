@@ -57,10 +57,25 @@ https://dxzenith.github.io/Elixir-Validator-Node/
 
 ## 나 뭔가 실수했어요, 내 가상서버(VPS)에서 Elixir_Validator Node를 삭제하고 싶어요.
 ```bash
-docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop && docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm && docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'` && sudo apt-get remove node.js && sudo apt-get remove npm && sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules && sudo rm -rf /usr/local/lib/node* && sudo rm -rf /usr/local/include/node* && sudo rm -rf /usr/local/bin/node* && sudo rm -rf elixirprotocol
+docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop && docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm && docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
 ```
-
-(한 줄입니다) 입력한 후에
+이거 입력하고
+```bash
+sudo apt-get remove node.js
+```
+이거 입력하고
+```bash
+sudo apt-get remove npm
+```
+이거 입력한 다음에
+```bash
+sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules
+sudo rm -rf /usr/local/lib/node*
+sudo rm -rf /usr/local/include/node*
+sudo rm -rf /usr/local/bin/node*
+sudo rm -rf elixirprotocol
+```
+이 명령어들을 한 줄씩 입력한 다음에
 
 ```bash
 rm validator_wallet.txt && rm validator.env && rm generate_wallet.js
