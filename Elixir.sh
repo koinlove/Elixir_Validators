@@ -221,7 +221,7 @@ echo && echo -e "${BOLD}${RED}ELIXIR PROTOCOL 자동 설치 스크립트${NC} by
  ———————————————————————" && echo
 
 # 사용자 입력 대기
-read -e -p " 어떤 과정을 하고 싶으신가요? 위 항목을 참고해 숫자를 입력해 주세요: " num
+read -e -p "${BOLD}${YELLOW} 어떤 과정을 하고 싶으신가요? 위 항목을 참고해 숫자를 입력해 주세요: ${NC}" num
 case "$num" in
 1)
     install_env_and_ELIXIR_PROTOCOL
