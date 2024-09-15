@@ -59,6 +59,14 @@ https://dxzenith.github.io/Elixir-Validator-Node/
 ```
 여기 들어가서 내가 설정한 닉네임 검색하면 됩니다.
 
+## 노드를 업데이트 해야돼요!
+```bash
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
+```
+입력해서
+![image](https://github.com/user-attachments/assets/2bd2610c-f043-4469-b14e-ee72bbbfd6f6)
+3번 입력하면 알아서 주르륵 업뎃이 될 거에요!
+
 ## 나 뭔가 실수했어요, 내 가상서버(VPS)에서 Elixir_Validator Node를 삭제하고 싶어요.
 ```bash
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
