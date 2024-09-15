@@ -171,7 +171,7 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 설치 완료. 이제 꺼져 씨�
 
 #노드 재시작 명령어
 restart_ELIXIR_PROTOCOL() {
-echo -e "${BLUE}docker restart elixir${NC}"
+echo -e "${CYAN}docker restart elixir${NC}"
 docker restart elixir
 
 echo -e "${BOLD}${CYAN}Elixir Validator 노드 재시작 완료. 이제 꺼져 씨발.${NC}"
@@ -179,18 +179,18 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 재시작 완료. 이제 꺼져 �
 
 #노드 업데이트 명령어
 update_ELIXIR_PROTOCOL() {
-echo -e "${BLUE}도커 멈췄다 죽였다 지우는 중...${NC}"
+echo -e "${CYAN}도커 멈췄다 죽였다 지우는 중...${NC}"
 docker stop elixir
 docker kill elixir 
 docker rm elixir
 
-echo -e "${BLUE}removing docker image... |${NC}"
+echo -e "${CYAN}removing docker image... |${NC}"
 docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
 
-echo -e "${BLUE}docker pull elixirprotocol/validator:v3${NC}"
+echo -e "${CYAN}docker pull elixirprotocol/validator:v3${NC}"
 docker pull elixirprotocol/validator:v3
 
-echo -e "${BLUE}docker run{NC}"
+echo -e "${CYAN}docker run{NC}"
 docker run -d --env-file validator.env --name elixir -p 17690:17690 --restart unless-stopped elixirprotocol/validator:v3
 
 echo -e "${BOLD}${CYAN}Elixir Validator 노드 업데이트 완료. 이제 꺼져 씨발.${NC}"
@@ -199,21 +199,21 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 업데이트 완료. 이제 꺼�
 #노드 삭제 명령어
 uninstall_ELIXIR_PROTOCOL() {
 
-echo -e "${BLUE}엘릭서 프로토콜 도커들 싹 다 없애는 중 ㅎㅎ{NC}"
+echo -e "${CYAN}엘릭서 프로토콜 도커들 싹 다 없애는 중 ㅎㅎ{NC}"
 docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop
 docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm
 docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
 
-echo -e "${BLUE}관련 파일들 없애는 중!{NC}"
+echo -e "${CYAN}관련 파일들 없애는 중!{NC}"
 sudo rm -rf validator_wallet.txt
 sudo rm -rf rm validator.env
 sudo rm -rf generate_wallet.js
 
-echo -e "${BLUE}sudo apt-get remove node.js && npm{NC}"
+echo -e "${CYAN}sudo apt-get remove node.js && npm{NC}"
 sudo apt-get remove node.js
 sudo apt-get remove npm
 
-echo -e "${BLUE}node.js에 남은 파일들 다 지우는 중...{NC}"
+echo -e "${CYAN}node.js에 남은 파일들 다 지우는 중...{NC}"
 sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules
 sudo rm -rf /usr/local/lib/node*
 sudo rm -rf /usr/local/include/node*
@@ -225,7 +225,7 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 지우기 완료. 이제 꺼져 �
 
 # 메인 메뉴
 echo && echo -e "${BOLD}${RED}ELIXIR PROTOCOL 자동 설치 스크립트${NC} by 비욘세제발죽어
- ${BLUE}원하는 거 고르시고 실행하시고 그러세효. ${NC}
+ ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ———————————————————————
  ${GREEN} 1. 기본파일 설치 및 ELIXIR PROTOCOL 설치 ${NC}
  ${GREEN} 2. ELIXIR PROTOCOL 재시작 ${NC}
