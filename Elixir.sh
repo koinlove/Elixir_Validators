@@ -21,13 +21,13 @@ check_korean_support() {
 
 # Install KOREAN if not 
 if check_korean_support; then
-    echo -e "${BLUE}한글있긔 설치넘기긔.${NC}"
+    echo -e "${CYAN}한글있긔 설치넘기긔.${NC}"
 else
-    echo -e "${BLUE}한글없긔, 설치하겠긔.${NC}"
+    echo -e "${CYAN}한글없긔, 설치하겠긔.${NC}"
     sudo apt-get install language-pack-ko -y
     sudo locale-gen ko_KR.UTF-8
     sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
-    echo -e "${BLUE}설치 완료했긔.${NC}"
+    echo -e "${CYAN}설치 완료했긔.${NC}"
 fi
 
 
