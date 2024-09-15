@@ -7,8 +7,11 @@
 ```bash
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
+![image](https://github.com/user-attachments/assets/44e80074-7f26-45b9-9feb-1e434a97b1e9)
+명령어를 입력하면 이런 이미지가 뜨는데, '1'을 치면 알아서 설치가 됩니다.
 
-위에 올리면 바로 후루룩 하면서 알아서 깔린답니다.
+![image](https://github.com/user-attachments/assets/4e784c01-70d5-4ff0-b988-cf66ce3ade31)
+이런 식으로 숫자만 넣으셔야 돼요! 안 그러시면 무서운 명령어를 보실 수도...
 
 - 주의해야 할 것들
 ```bash
@@ -35,6 +38,7 @@ curl localhost:17690/metrics
 docker logs elixir -f -n 100
 ```
 아니면 이거로 로그 보셔두 되구염...
+> #### CTRL + Z로 종료하셔야 돼요!
 
 - 노드에 저장된 지갑 주소 확인 명령어
 ```bash
