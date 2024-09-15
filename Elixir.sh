@@ -4,20 +4,32 @@ BOLD='\033[1m'
 RED='\033[31m'
 GREEN='\033[32m'
 YELLOW='\033[33m'
-YELLOW='\033[34m'
+BLUE='\033[34m'
 CYAN='\033[36m'
 NC='\033[0m'
 
 
 # Install KOREAN
-sudo apt-get install language-pack-ko -y
+# Function check if Korean
+check_korean_support() {
+    if locale -a | grep -q "ko_KR.utf8"; then
+        return 0  # Korean support is installed
+    else
+        return 1  # Korean support is not installed
+    fi
+}
 
-sudo locale-gen ko_KR.UTF-8
+# Install KOREAN if not 
+if check_korean_support; then
+    echo -e "${BLUE}한글있긔 설치넘기긔.${NC}"
+else
+    echo -e "${BLUE}한글없긔, 설치하겠긔.${NC}"
+    sudo apt-get install language-pack-ko -y
+    sudo locale-gen ko_KR.UTF-8
+    sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
+    echo -e "${BLUE}설치 완료했긔.${NC}"
+fi
 
-sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
-
-
-echo -e "${GREEN}한국어 설치 완료.${NC}"
 
 #노드 설치 명령어 모음집
 install_env_and_ELIXIR_PROTOCOL() {
@@ -237,6 +249,6 @@ case "$num" in
     uninstall_ELIXIR_PROTOCOL
     ;;
 *)
-    echo -e "${Red_font_prefix}숫자 못 읽음? 진짜 병신이니 눈깔 삐엇니? 죽어 그냥 자살해 시발 1~5 하나 제대로 입력 못하는 주제에 무슨 노드를 쳐 돌리고~ 에드작을 한다 그러고~ 시발 서당개도 3년이면 풍월을 읊는다는데 만물의 영장이라는 게 시발 에드작을 반년 가까이 하고도 시발 숫자 하나 입력하는 법을 모르고 개 씨발 병신 좆버러지 같은 년 에휴 왜 사니? 여긴 왜 들어왔니? 코인이 하고 싶긴 하니? 너 평소에 하라는 에드작은 다 열심히 하고 있니? 안일하게 살지마 세상에 돈 벌기 쉬운 게 어딨어 다들 피땀흘려서 열심히 돈 버는데 지는 이거 하기 싫다고 편하게 딸깍이나 하러 와서는 숫자 하나 제대로 입력 못하고 내 복창이 터진다 씨발 에휴 병신 금수련아 짐승련아 대체 왜 그러고 사니 존재 자체가 인류의 공해야 너는 그냥 에휴 긴말 안 할게 죽어라 걍 에휴 ㅄ;;;;;;;;${Font_color_suffix}"
+    echo -e "${BOLD}${RED}숫자 못 읽음? 진짜 병신이니 눈깔 삐엇니? 죽어 그냥 자살해 시발 1~5 하나 제대로 입력 못하는 주제에 무슨 노드를 쳐 돌리고~ 에드작을 한다 그러고~ 시발 서당개도 3년이면 풍월을 읊는다는데 만물의 영장이라는 게 시발 에드작을 반년 가까이 하고도 시발 숫자 하나 입력하는 법을 모르고 개 씨발 병신 좆버러지 같은 년 에휴 왜 사니? 여긴 왜 들어왔니? 코인이 하고 싶긴 하니? 너 평소에 하라는 에드작은 다 열심히 하고 있니? 안일하게 살지마 세상에 돈 벌기 쉬운 게 어딨어 다들 피땀흘려서 열심히 돈 버는데 지는 이거 하기 싫다고 편하게 딸깍이나 하러 와서는 숫자 하나 제대로 입력 못하고 내 복창이 터진다 씨발 에휴 병신 금수련아 짐승련아 대체 왜 그러고 사니 존재 자체가 인류의 공해야 너는 그냥 에휴 긴말 안 할게 죽어라 걍 에휴 ㅄ;;;;;;;;${NC}"
     ;;
 esac
