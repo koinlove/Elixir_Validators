@@ -7,11 +7,11 @@
 ```bash
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
-![image](https://github.com/user-attachments/assets/44e80074-7f26-45b9-9feb-1e434a97b1e9)
+![image](https://github.com/user-attachments/assets/415dc586-df7f-4ed3-8664-f4c4ac334f3d)
 명령어를 입력하면 이런 이미지가 뜨는데, '1'을 치면 알아서 설치가 됩니다.
 
-![image](https://github.com/user-attachments/assets/4e784c01-70d5-4ff0-b988-cf66ce3ade31)
-이런 식으로 숫자만 넣으셔야 돼요! 안 그러시면 무서운 명령어를 보실 수도...
+![image](https://github.com/user-attachments/assets/b65f8d2c-78f9-472a-8827-f2420d13252c)
+이런 식으로 숫자만 넣으셔야 돼요! 안 그러시면 무서운 문장들을 보실 수도...
 
 - 주의해야 할 것들
 ```bash
@@ -61,34 +61,17 @@ https://dxzenith.github.io/Elixir-Validator-Node/
 
 ## 나 뭔가 실수했어요, 내 가상서버(VPS)에서 Elixir_Validator Node를 삭제하고 싶어요.
 ```bash
-docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop && docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm && docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
-이거 입력하고
-```bash
-sudo apt-get remove node.js
-```
-이거 입력하고
-```bash
-sudo apt-get remove npm
-```
-이거 입력한 다음에
-```bash
-sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules
-sudo rm -rf /usr/local/lib/node*
-sudo rm -rf /usr/local/include/node*
-sudo rm -rf /usr/local/bin/node*
-sudo rm -rf elixirprotocol
-```
-이 명령어들을 한 줄씩 입력한 다음에
+입력해서
 
-```bash
-rm validator_wallet.txt && rm validator.env && rm generate_wallet.js
-```
-
-입력해서 깔끔하게 지워주기
+![image](https://github.com/user-attachments/assets/311bf53f-41d5-4333-a6b4-0fe9a4c7138f)
+이 화면에서 4번 입력하면 알아서 까르꼬름하게 지워줄 거에용~
 
 ## 다시 재설치 하려면 
 ```bash
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
-넣으시면 됩니다~ ㅎㅎ
+입력하시고
+![image](https://github.com/user-attachments/assets/b65f8d2c-78f9-472a-8827-f2420d13252c)
+하시면 끝~
