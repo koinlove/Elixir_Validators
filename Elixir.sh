@@ -7,6 +7,7 @@ YELLOW='\033[33m'
 CYAN='\033[36m'
 NC='\033[0m'
 
+
 # Install KOREAN
 sudo apt-get install language-pack-ko -y
 
@@ -17,6 +18,8 @@ sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
 
 echo -e "${GREEN}한국어 설치 완료.${NC}"
 
+#노드 설치 명령어 모음집
+install_env_and_ELIXIR_PROTOCOL() {
 command_exists() {
     command -v "$1" &> /dev/null
 }
@@ -119,7 +122,7 @@ echo -e "${BOLD}${YELLOW}1.방문하세요: https://testnet-3.elixir.xyz/ (CTRL 
 echo -e "${BOLD}${YELLOW}2.위 사이트에서 세폴리아 이더가 있는 지갑으로 로그인하세요(방금 생성한 지갑 입력하라는 거 아님.).${NC}"
 echo -e "${BOLD}${YELLOW}2-1.만약 지갑에 이더가 없으면 톡방에 세폴리아 이더 어디서 받냐고 물어보셈.${NC}"
 echo -e "${BOLD}${YELLOW}3.'MINT 1,000 MOCK' 클릭해서 토큰 받기.${NC}"
-echo -e "${BOLD}${YELLOW}4.토큰 민트 완료했으면 바로 밑에 있는 Stake 칸에 MAX 누른 다음에 approve 누르고 STAKE 한 번 더 클릭하기.${NC}"
+echo -e "${BOLD}${YELLOW}4.토큰 민트 완료했으면 바로 밑에 있는 Stake 칸에 MAX 누른 다음에 approve 누르고 한 번 더 클릭하기.${NC}"
 echo -e "${BOLD}${YELLOW}5.밑에 custom validator라는 버튼 클릭,그리고 방금 받은 Validator address 입력하삼. 님의 validator 지갑 address : $VALIDATOR_ADDRESS for delegation${NC}"
 echo ""
 
@@ -134,14 +137,14 @@ else
 	echo -e "${BOLD}${YELLOW}2.사이트 들어가서 세폴리아 이더가 있는 지갑으로 CONNECT하세요(방금 생성한 지갑 입력하라는 거 아님.).${NC}"
     echo -e "${BOLD}${YELLOW}2-1.만약 지갑에 이더가 없으면 톡방에 세폴리아 이더 어디서 받냐고 물어보셈.${NC}"
     echo -e "${BOLD}${YELLOW}3.'MINT 1,000 MOCK' 클릭해서 토큰 받기.${NC}"
-	echo -e "${BOLD}${YELLOW}4.토큰 민트 완료했으면 바로 밑에 있는 Stake 칸에 MAX 누른 다음에 approve 누르고 STAKE 한 번 더 클릭하기.${NC}"
+	echo -e "${BOLD}${YELLOW}4.토큰 민트 완료했으면 바로 밑에 있는 Stake 칸에 MAX 누른 다음에 approve 누르고 한 번 더 클릭하기.${NC}"
 	echo -e "${BOLD}${YELLOW}5.밑에 custom validator라는 버튼 클릭,그리고 방금 받은 Validator address 입력하삼. 님의 validator 지갑 address : $VALIDATOR_ADDRESS for delegation${NC}"
 	read -p "이번엔 진짜 완료하셨나욤? (y/n): " daedap
 	if [[ "$daedap" =~ ^[yY]$ ]]; then
 		echo -e "${BOLD}${CYAN}Pulling Elixir Protocol Validator Image...${NC}"
 		docker pull elixirprotocol/validator:v3
 	else
-		echo -e "$BOLD}${RED}걍 죽어 이 씨발년아${NC}"
+		echo -e "{$BOLD}${RED}걍 죽어 이 씨발년아${NC}"
 		exit 1
 	fi
 fi
@@ -151,3 +154,88 @@ echo -e "${BOLD}${CYAN}Running Docker...${NC}"
 docker run -d --env-file validator.env --name elixir -p 17690:17690 --restart unless-stopped elixirprotocol/validator:v3
 echo ""
 echo -e "${BOLD}${CYAN}Elixir Validator 노드 설치 완료. 이제 꺼져 씨발.${NC}"
+}
+
+#노드 재시작 명령어
+restart_ELIXIR_PROTOCOL() {
+echo -e "${BLUE}docker restart elixir${NC}"
+docker restart elixir
+
+echo -e "${BOLD}${CYAN}Elixir Validator 노드 재시작 완료. 이제 꺼져 씨발.${NC}"
+}
+
+#노드 업데이트 명령어
+update_ELIXIR_PROTOCOL() {
+echo -e "${BLUE}도커 멈췄다 죽였다 지우는 중...${NC}"
+docker stop elixir
+docker kill elixir 
+docker rm elixir
+
+echo -e "${BLUE}removing docker image... |${NC}"
+docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
+
+echo -e "${BLUE}docker pull elixirprotocol/validator:v3${NC}"
+docker pull elixirprotocol/validator:v3
+
+echo -e "${BLUE}docker run{NC}"
+docker run -d --env-file validator.env --name elixir -p 17690:17690 --restart unless-stopped elixirprotocol/validator:v3
+
+echo -e "${BOLD}${CYAN}Elixir Validator 노드 업데이트 완료. 이제 꺼져 씨발.${NC}"
+}
+
+#노드 삭제 명령어
+uninstall_ELIXIR_PROTOCOL() {
+
+echo -e "${BLUE}엘릭서 프로토콜 도커들 싹 다 없애는 중 ㅎㅎ{NC}"
+docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop
+docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm
+docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
+
+echo -e "${BLUE}관련 파일들 없애는 중!{NC}"
+sudo rm -rf validator_wallet.txt
+sudo rm -rf rm validator.env
+sudo rm -rf generate_wallet.js
+
+echo -e "${BLUE}sudo apt-get remove node.js && npm{NC}"
+sudo apt-get remove node.js
+sudo apt-get remove npm
+
+echo -e "${BLUE}node.js에 남은 파일들 다 지우는 중...{NC}"
+sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules
+sudo rm -rf /usr/local/lib/node*
+sudo rm -rf /usr/local/include/node*
+sudo rm -rf /usr/local/bin/node*
+sudo rm -rf elixirprotocol
+
+echo -e "${BOLD}${CYAN}Elixir Validator 노드 지우기 완료. 이제 꺼져 씨발.${NC}"
+}
+
+# 메인 메뉴
+echo && echo -e "${BOLD}${Red}ELIXIR PROTOCOL 자동 설치 스크립트${NC} by 비욘세제발죽어
+ ${Blue}원하는 거 고르시고 실행하시고 그러세효. ${NC}
+ ———————————————————————
+ ${GREEN} 1. 기본파일 설치 및 ELIXIR PROTOCOL 설치 ${NC}
+ ${GREEN} 2. ELIXIR PROTOCOL 재시작 ${NC}
+ ${GREEN} 3. ELIXIR PROTOCOL 업데이트 ${NC}
+ ${GREEN} 4. ELIXIR PROTOCOL만 삭제하고 싶어요ㅠ ${NC}
+ ———————————————————————" && echo
+
+# 사용자 입력 대기
+read -e -p " 어떤 과정을 하고 싶으신가요? 위 항목을 참고해 숫자를 입력해 주세요: " num
+case "$num" in
+1)
+    install_env_and_ELIXIR_PROTOCOL
+    ;;
+2)
+    restart_ELIXIR_PROTOCOL
+    ;;
+3)
+    update_ELIXIR_PROTOCOL
+    ;;
+4)
+    uninstall_ELIXIR_PROTOCOL
+    ;;
+*)
+    echo -e "${Red_font_prefix}숫자 못 읽음? 진짜 병신이니 눈깔 삐엇니? 죽어 그냥 자살해 시발 1~5 하나 제대로 입력 못하는 주제에 무슨 노드를 쳐 돌리고~ 에드작을 한다 그러고~ 시발 서당개도 3년이면 풍월을 읊는다는데 만물의 영장이라는 게 시발 에드작을 반년 가까이 하고도 시발 숫자 하나 입력하는 법을 모르고 개 씨발 병신 좆버러지 같은 년 에휴 왜 사니? 여긴 왜 들어왔니? 코인이 하고 싶긴 하니? 너 평소에 하라는 에드작은 다 열심히 하고 있니? 안일하게 살지마 세상에 돈 벌기 쉬운 게 어딨어 다들 피땀흘려서 열심히 돈 버는데 지는 이거 하기 싫다고 편하게 딸깍이나 하러 와서는 숫자 하나 제대로 입력 못하고 내 복창이 터진다 씨발 에휴 병신 금수련아 짐승련아 대체 왜 그러고 사니 존재 자체가 인류의 공해야 너는 그냥 에휴 긴말 안 할게 죽어라 걍 에휴 ㅄ;;;;;;;;${Font_color_suffix}"
+    ;;
+esac
