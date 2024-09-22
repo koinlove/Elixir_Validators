@@ -6,6 +6,7 @@ GREEN='\033[32m'
 YELLOW='\033[33m'
 BLUE='\033[34m'
 CYAN='\033[36m'
+MAGENTA='\033[35m'
 NC='\033[0m'
 
 
@@ -144,7 +145,7 @@ if [[ "$response" =~ ^[yY]$ ]]; then
     echo -e "${BOLD}${CYAN}Pulling Elixir Protocol Validator Image...${NC}"
     docker pull elixirprotocol/validator:v3
 else
-    echo -e "${BOLD}${RED}미친년. 씨발 n<< 그냥 장식으로 쳐 달았는데 이걸 왜 쳐 누름? 미친년인가 넌 평생 가난하게 살 거야 에드 정산 하나도 못 받을 거고 니가 하는 에드작 다 쳐망할 거고 니가 돌리는 노드 죄다 좆망할 거고 니 통장에 -잔고만 쌓일 거고 빚도 5000만원 생길 듯 하등 쓸모없는년.{NC}"
+    echo -e "${BOLD}${RED}미친년. 씨발 n<< 그냥 장식으로 쳐 달았는데 이걸 왜 쳐 누름? 미친년인가 넌 평생 가난하게 살 거야 에드 정산 하나도 못 받을 거고 니가 하는 에드작 다 쳐망할 거고 니가 돌리는 노드 죄다 좆망할 거고 니 통장에 -잔고만 쌓일 거고 빚도 5000만원 생길 듯 하등 쓸모없는년.${NC}"
     echo -e "${BOLD}${YELLOW}시발다시해봐미친년아.${NC}"
 	echo -e "${BOLD}${YELLOW}1.방문하세요: https://testnet-3.elixir.xyz/ (CTRL 누른 상태에서 마우스 클릭하면 들어가짐).${NC}"
 	echo -e "${BOLD}${YELLOW}2.사이트 들어가서 세폴리아 이더가 있는 지갑으로 CONNECT하세요(방금 생성한 지갑 입력하라는 거 아님.).${NC}"
@@ -157,7 +158,7 @@ else
 		echo -e "${BOLD}${CYAN}Pulling Elixir Protocol Validator Image...${NC}"
 		docker pull elixirprotocol/validator:v3
 	else
-		echo -e "{$BOLD}${RED}걍 죽어 이 씨발년아${NC}"
+		echo -e "${BOLD}${RED}걍 죽어 이 씨발년아${NC}"
 		exit 1
 	fi
 fi
@@ -199,21 +200,21 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 업데이트 완료. 이제 꺼�
 #노드 삭제 명령어
 uninstall_ELIXIR_PROTOCOL() {
 
-echo -e "${CYAN}엘릭서 프로토콜 도커들 싹 다 없애는 중 ㅎㅎ${NC}"
+echo -e "${CYAN}엘릭서 프로토콜 도커들 싹 다 없애는 중 ㅎㅎ{NC}"
 docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop
 docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm
 docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
 
-echo -e "${CYAN}관련 파일들 없애는 중!${NC}"
+echo -e "${CYAN}관련 파일들 없애는 중!{NC}"
 sudo rm -rf validator_wallet.txt
 sudo rm -rf rm validator.env
 sudo rm -rf generate_wallet.js
 
-echo -e "${CYAN}sudo apt-get remove node.js && npm${NC}"
+echo -e "${CYAN}sudo apt-get remove node.js && npm{NC}"
 sudo apt-get remove node.js
 sudo apt-get remove npm
 
-echo -e "${CYAN}node.js에 남은 파일들 다 지우는 중...${NC}"
+echo -e "${CYAN}node.js에 남은 파일들 다 지우는 중...{NC}"
 sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules
 sudo rm -rf /usr/local/lib/node*
 sudo rm -rf /usr/local/include/node*
@@ -234,7 +235,9 @@ echo && echo -e "${BOLD}${RED}ELIXIR PROTOCOL 자동 설치 스크립트${NC} by
  ———————————————————————" && echo
 
 # 사용자 입력 대기
-read -e -p "어떤 과정을 하고 싶으신가요? 위 항목을 참고해 숫자를 입력해 주세요: " num
+echo -ne "${BOLD}${MAGENTA}어떤 작업을 수행하고 싶으신가요? 위 항목을 참고해 숫자를 입력해 주세요: ${NC}"
+read -e num
+
 case "$num" in
 1)
     install_env_and_ELIXIR_PROTOCOL
