@@ -82,6 +82,10 @@ cat validator.env
 ![image](https://github.com/user-attachments/assets/311bf53f-41d5-4333-a6b4-0fe9a4c7138f)
 이 화면에서 4번 입력하면 알아서 까르꼬름하게 지워줄 거에용~
 
+![image](https://github.com/user-attachments/assets/1ea2be0f-d034-4ae8-ab7c-704767785d8a)
+
+>중간에 뜨는 이 친구한테는 **Y** 치고 엔터하기!
+
 ## 다시 재설치 하려면 
 ```bash
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
