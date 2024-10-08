@@ -53,12 +53,6 @@ cat validator.env
 
 오류 뜨면 뵨죽이나 라나돼레이에게 톡하세욤. 그럼 20000
 
-## 내 랭크 확인하는 방법
-
-> [랭크 확인하는 곳](https://dxzenith.github.io/Elixir-Validator-Node/)
-
-여기 들어가서 내가 설정한 닉네임 검색하면 됩니다
-
 ## 엘릭서 대쉬보드 보는 곳
 
 > [엘릭서 대쉬보드 보는 곳](https://testnet-3.elixir.xyz/)
