@@ -188,7 +188,7 @@ docker rm elixir
 echo -e "${CYAN}removing docker image... |${NC}"
 docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
 
-echo -e "${CYAN}docker pull elixirprotocol/validator:v3${NC}"
+echo -e "${CYAN}docker pull elixirprotocol/validator:v3 --platform linux/amd64${NC}"
 docker pull elixirprotocol/validator:v3 --platform linux/amd64
 
 echo -e "${CYAN}docker run${NC}"
