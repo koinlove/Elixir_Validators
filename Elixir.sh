@@ -189,10 +189,10 @@ echo -e "${CYAN}removing docker image... |${NC}"
 docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
 
 echo -e "${CYAN}docker pull elixirprotocol/validator:v3${NC}"
-docker pull elixirprotocol/validator:v3
+docker pull elixirprotocol/validator:v3 --platform linux/amd64
 
 echo -e "${CYAN}docker run${NC}"
-docker run -d --env-file validator.env --name elixir -p 17690:17690 --restart unless-stopped elixirprotocol/validator:v3
+docker run -d --env-file validator.env --platform linux/amd64 -p 17690:17690 --restart unless-stopped elixirprotocol/validator:v3
 
 echo -e "${BOLD}${CYAN}Elixir Validator 노드 업데이트 완료. 이제 꺼져 씨발.${NC}"
 }
@@ -226,11 +226,11 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 지우기 완료. 이제 꺼져 �
 
 # 메인 메뉴
 echo && echo -e "${BOLD}${RED}ELIXIR PROTOCOL 자동 설치 스크립트${NC} by 비욘세제발죽어
- ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
+${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ———————————————————————
  ${GREEN} 1. 기본파일 설치 및 ELIXIR PROTOCOL 설치 ${NC}
  ${GREEN} 2. ELIXIR PROTOCOL 재시작 ${NC}
- ${GREEN} 3. ELIXIR PROTOCOL 업데이트 ${NC}
+ ${GREEN} 3. ELIXIR PROTOCOL 업데이트(10/12 업데이트) ${NC}
  ${GREEN} 4. ELIXIR PROTOCOL만 삭제하고 싶어요ㅠ ${NC}
  ———————————————————————" && echo
 
