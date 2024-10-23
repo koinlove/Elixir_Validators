@@ -173,7 +173,7 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 설치 완료. 이제 꺼져 씨�
 #노드 재시작 명령어
 restart_ELIXIR_PROTOCOL() {
 echo -e "${CYAN}docker restart elixir${NC}"
-docker restart elixir
+docker ps -q --filter "ancestor=elixirprotocol/validator:v3" | xargs docker restart
 
 echo -e "${BOLD}${CYAN}Elixir Validator 노드 재시작 완료. 이제 꺼져 씨발.${NC}"
 }
@@ -181,9 +181,8 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 재시작 완료. 이제 꺼져 �
 #노드 업데이트 명령어
 update_ELIXIR_PROTOCOL() {
 echo -e "${CYAN}도커 멈췄다 죽였다 지우는 중...${NC}"
-docker stop elixir
-docker kill elixir 
-docker rm elixir
+docker ps -q --filter "ancestor=elixirprotocol/validator:v3" | xargs docker stop
+docker ps -a -q --filter "ancestor=elixirprotocol/validator:v3" | xargs docker rm
 
 echo -e "${CYAN}removing docker image... |${NC}"
 docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
@@ -201,8 +200,8 @@ echo -e "${BOLD}${CYAN}Elixir Validator 노드 업데이트 완료. 이제 꺼�
 uninstall_ELIXIR_PROTOCOL() {
 
 echo -e "${CYAN}엘릭서 프로토콜 도커들 싹 다 없애는 중 ㅎㅎ{NC}"
-docker ps -a | grep elixir | awk '{print $1}' | xargs docker stop
-docker ps -a | grep elixir | awk '{print $1}' | xargs docker rm
+docker ps -q --filter "ancestor=elixirprotocol/validator:v3" | xargs docker stop
+docker ps -a -q --filter "ancestor=elixirprotocol/validator:v3" | xargs docker rm
 docker rmi `docker images | awk '$1 ~ /elixirprotocol/ {print $1, $3}'`
 
 echo -e "${CYAN}관련 파일들 없애는 중!{NC}"
