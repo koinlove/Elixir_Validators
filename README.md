@@ -35,7 +35,7 @@ curl localhost:17690/metrics
 
 - 노드의 로그 확인하는 명령어
 ```bash
-docker logs elixir -f -n 100
+docker ps -q --filter "ancestor=elixirprotocol/validator:v3" | xargs docker logs -f
 ```
 아니면 이거로 로그 보셔두 되구염...
 > #### CTRL + Z로 종료하셔야 돼요!
