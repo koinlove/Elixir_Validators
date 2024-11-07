@@ -5,7 +5,7 @@
 
 ## 노드 설치 명령어
 ```bash
-[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/koinlove/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
 ![image](https://github.com/user-attachments/assets/415dc586-df7f-4ed3-8664-f4c4ac334f3d)
 명령어를 입력하면 이런 이미지가 뜨는데, '1'을 치면 알아서 설치가 됩니다.
@@ -61,7 +61,7 @@ cat validator.env
 
 ## 노드를 업데이트 해야돼요!
 ```bash
-[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/koinlove/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
 입력해서
 ![image](https://github.com/user-attachments/assets/2bd2610c-f043-4469-b14e-ee72bbbfd6f6)
@@ -69,7 +69,7 @@ cat validator.env
 
 ## 나 뭔가 실수했어요, 내 가상서버(VPS)에서 Elixir_Validator Node를 삭제하고 싶어요.
 ```bash
-[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/koinlove/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
 입력해서
 
@@ -82,7 +82,7 @@ cat validator.env
 
 ## 다시 재설치 하려면 
 ```bash
-[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/byonjuk/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
+[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/koinlove/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
 입력하시고
 ![image](https://github.com/user-attachments/assets/b65f8d2c-78f9-472a-8827-f2420d13252c)
