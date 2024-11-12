@@ -7,11 +7,8 @@
 ```bash
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/koinlove/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
-![image](https://github.com/user-attachments/assets/415dc586-df7f-4ed3-8664-f4c4ac334f3d)
+![image](https://github.com/user-attachments/assets/cd1efd8b-dcee-436b-95a4-f11d928e866f)
 명령어를 입력하면 이런 이미지가 뜨는데, '1'을 치면 알아서 설치가 됩니다.
-
-![image](https://github.com/user-attachments/assets/b65f8d2c-78f9-472a-8827-f2420d13252c)
-이런 식으로 숫자만 넣으셔야 돼요! 안 그러시면 무서운 문장들을 보실 수도...
 
 - 주의해야 할 것들
 ```bash
@@ -64,7 +61,7 @@ cat validator.env
 [ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/koinlove/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
 ```
 입력해서
-![image](https://github.com/user-attachments/assets/2bd2610c-f043-4469-b14e-ee72bbbfd6f6)
+![image](https://github.com/user-attachments/assets/d8814ba0-297f-44b1-994b-9cbeafd67896)
 3번 입력하면 알아서 주르륵 업뎃이 될 거에요!
 
 ## 나 뭔가 실수했어요, 내 가상서버(VPS)에서 Elixir_Validator Node를 삭제하고 싶어요.
@@ -73,17 +70,9 @@ cat validator.env
 ```
 입력해서
 
-![image](https://github.com/user-attachments/assets/311bf53f-41d5-4333-a6b4-0fe9a4c7138f)
+![image](https://github.com/user-attachments/assets/d5ef1687-5d2e-4d82-b49d-5fc5d69f5ef5)
 이 화면에서 4번 입력하면 알아서 까르꼬름하게 지워줄 거에용~
 
 ![image](https://github.com/user-attachments/assets/1ea2be0f-d034-4ae8-ab7c-704767785d8a)
 
 >중간에 뜨는 이 친구한테는 **Y** 치고 엔터하기!
-
-## 다시 재설치 하려면 
-```bash
-[ -f "Elixir.sh" ] && rm Elixir.sh; wget -q https://raw.githubusercontent.com/koinlove/Elixir_Validators/main/Elixir.sh && chmod +x Elixir.sh && ./Elixir.sh
-```
-입력하시고
-![image](https://github.com/user-attachments/assets/b65f8d2c-78f9-472a-8827-f2420d13252c)
-하시면 끝~
