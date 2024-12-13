@@ -52,7 +52,8 @@ cat validator.env
 
 ## 엘릭서 대쉬보드 보는 곳
 
-> [엘릭서 대쉬보드 보는 곳](https://testnet-3.elixir.xyz/)
+> [엘릭서 대쉬보드 보는 곳(구버젼, 지금은 안 뜸)](https://testnet-3.elixir.xyz/)
+> [엘릭서 대쉬보드 보는 곳(신버젼, 지금부터 뜸)](https://www.elixir.xyz/validators)
 
 여기 들어가서 지갑 연결하면 잘 떠용 ㅎ
 
