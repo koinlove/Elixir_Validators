@@ -37,12 +37,11 @@ docker ps -q --filter "ancestor=elixirprotocol/validator:v3" | xargs docker logs
 아니면 이거로 로그 보셔두 되구염...
 > #### CTRL + Z로 종료하셔야 돼요!
 
-- 노드에 저장된 지갑 주소 확인 명령어
+- 노드 구동에 필요한 지갑 주소(밑에서 순위 검색하려면 이거로 노드 지갑 검색해야 됨)
 ```bash
 cat validator_wallet.txt
 ```
-이거 입력하면 님 지갑주소랑 그런 거 보여용
-
+이거는 님이 노드 위탁에 사용한 지갑, 그냥 님 메마 지갑임 ㅇㅇ
 ```bash
 cat validator.env
 ```
