@@ -229,7 +229,7 @@ ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ———————————————————————
  ${GREEN} 1. 기본파일 설치 및 ELIXIR PROTOCOL 설치 ${NC}
  ${GREEN} 2. ELIXIR PROTOCOL 재시작 ${NC}
- ${GREEN} 3. ELIXIR PROTOCOL 업데이트(10/12 업데이트) ${NC}
+ ${GREEN} 3. ELIXIR PROTOCOL 업데이트(엘릭서 업뎃은 매 주마다 있음ㅎ) ${NC}
  ${GREEN} 4. ELIXIR PROTOCOL만 삭제하고 싶어요ㅠ ${NC}
  ———————————————————————" && echo
 
