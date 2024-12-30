@@ -143,7 +143,7 @@ echo ""
 read -p "위의 스텝들 다 완료 하셨나용?? (y/n): " response
 if [[ "$response" =~ ^[yY]$ ]]; then
     echo -e "${BOLD}${CYAN}Pulling Elixir Protocol Validator Image...${NC}"
-    docker pull elixirprotocol/validator
+    docker pull elixirprotocol/validator:v3
 else
     echo -e "${BOLD}${RED}미친년. 씨발 n<< 그냥 장식으로 쳐 달았는데 이걸 왜 쳐 누름? 미친년인가 넌 평생 가난하게 살 거야 에드 정산 하나도 못 받을 거고 니가 하는 에드작 다 쳐망할 거고 니가 돌리는 노드 죄다 좆망할 거고 니 통장에 -잔고만 쌓일 거고 빚도 5000만원 생길 듯 하등 쓸모없는년.${NC}"
     echo -e "${BOLD}${YELLOW}시발다시해봐미친년아.${NC}"
@@ -156,7 +156,7 @@ else
 	read -p "이번엔 진짜 완료하셨나욤? (y/n): " daedap
 	if [[ "$daedap" =~ ^[yY]$ ]]; then
 		echo -e "${BOLD}${CYAN}Pulling Elixir Protocol Validator Image...${NC}"
-		docker pull elixirprotocol/validator
+		docker pull elixirprotocol/validator:v3
 	else
 		echo -e "${BOLD}${RED}걍 죽어 이 씨발년아${NC}"
 		exit 1
